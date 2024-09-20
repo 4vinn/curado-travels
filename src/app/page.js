@@ -6,6 +6,7 @@ import Lenis from "@studio-freight/lenis";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
 import Gallery from "@/components/Gallery";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   //SMOOTH SCROLL
@@ -46,12 +47,11 @@ export default function Home() {
     );
   }
   const phrases = [
-    "Los Flamencos National Reserve",
-    "is a nature reserve located",
-    "in the commune of San Pedro de Atacama",
-    "The reserve covers a total area",
-    "of 740 square kilometres (290 sq mi)",
+    "Lorem ipsum dolor sit ametelit",
+    "Lorem ipsum dolor sit ametelit",
+    "Lorem ipsum dolor sit ametelit",
   ];
+  const phrases2 = ["Some more text", "Some more text", "Some more text"];
 
   //CURADO text entry animation
   // function AnimatedHead({ children }) {
@@ -121,7 +121,9 @@ export default function Home() {
             <div className="text-white italic text-3xl md:text-5xl font-extrabold relative -ml-[10vw] max-w-[90vw] ">
               {/* TEXT ENTRY EFFECT */}
               {/* add this in above classname: relative -ml-[10vw] max-w-[90vw] */}
-              <AnimatedText>Some more text</AnimatedText>
+              {phrases2.map((phrase, index) => {
+                return <AnimatedText key={index}>{phrase}</AnimatedText>;
+              })}
               {/* Some more text */}
             </div>
           </div>
@@ -194,7 +196,8 @@ export default function Home() {
         <div className="w-[100%]">
           <video
             className="object-cover w-full h-full min-h-[100vh]"
-            src="https://framerusercontent.com/assets/cXGGRdoWmVg2EP0rKNWhq3Z0aiY.mp4"
+            // src="oceanbg.mp4"
+            src="https://cdn.pixabay.com/video/2016/01/08/1890-151167947_large.mp4"
             autoPlay
             loop
             muted
@@ -204,14 +207,29 @@ export default function Home() {
       </div>
       {/* section 5: snow*/}
       <div className="w-full min-h-screen flex flex-col justify-center items-center text-center max-w-[100vw] bg-[#fff] ">
-        <div className="w-[100%] text-black">SNOW</div>
+        <div className="w-[100%]">
+          <video
+            className="object-cover w-full h-full min-h-[100vh]"
+            // src="snowbg.mp4"
+            src="https://cdn.pixabay.com/video/2023/11/30/191443-890121806_large.mp4"
+            // src="https://cdn.pixabay.com/video/2019/11/21/29314-374760999_large.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+          />
+        </div>
       </div>
       {/* section 6: mountains*/}
       <div className="w-full min-h-screen flex flex-col justify-center items-center text-center max-w-[100vw] bg-[#fff] ">
         <div className="w-[100%]">
           <video
             className="object-cover w-full h-full min-h-[100vh]"
-            src="https://framerusercontent.com/assets/iIT5IoZ61ffXs4CHLXHDwfqTdc.mp4"
+            src="https://cdn.pixabay.com/video/2020/02/01/31838-389009360_large.mp4"
+            // src="https://cdn.pixabay.com/video/2021/09/23/89420-613200738_large.mp4"
+            // src="https://cdn.pixabay.com/video/2020/03/30/34608-402679728_large.mp4"
+            // src="https://cdn.pixabay.com/video/2020/01/12/31175-384523301_large.mp4"
+            // src="https://framerusercontent.com/assets/iIT5IoZ61ffXs4CHLXHDwfqTdc.mp4"
             autoPlay
             loop
             muted
@@ -220,27 +238,29 @@ export default function Home() {
         </div>
       </div>
       {/* section 7: driving*/}
-      <div className="w-full min-h-screen flex flex-col justify-center items-center text-center max-w-[100vw] bg-[#fff] ">
-        <div className="w-[100%] text-black">DRIVING</div>
+      <div className="w-full min-h-screen flex flex-col justify-center items-center text-center max-w-[100vw] bg-[#000] ">
+        <div className="w-[100%] ">
+          <video
+            className="object-cover w-full h-full min-h-[100vh]"
+            src="https://cdn.pixabay.com/video/2023/04/02/157134-814061529_large.mp4"
+            // src="https://cdn.pixabay.com/video/2023/10/12/184734-873923034_large.mp4"
+            // src="https://cdn.pixabay.com/video/2022/03/27/112040-695204669_large.mp4"
+            // src="https://cdn.pixabay.com/video/2021/04/29/72566-543910236_large.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+          />
+        </div>
       </div>
-      {/* section 8: portfolio*/}
-      <div className="w-full min-h-screen flex flex-col justify-center items-center text-center max-w-[100vw] bg-[#fffdea] ">
-        <div className="w-[100%] text-black">image gallery</div>
-      </div>
+
       {/* section 9: Image-gallery*/}
-      <div className="relative max-h-fit">
+      <div className="relative max-h-fit bg-black mt-10">
         <Gallery />
-        <Gallery />
+        {/* <Gallery /> */}
       </div>
       {/* footer */}
-      <footer
-        className="bg-[#161517] text-[#fff] bg-center h-[40vh]"
-        style={{
-          backgroundImage: `url("https://framerusercontent.com/images/IM6I3jGVILkPEJvAckCDsXyaK7k.png?scale-down-to=2048")`,
-        }}
-      >
-        <div className="p-10 md:p-20 lg:p-30"> CURADO</div>
-      </footer>
+      <Footer />
     </main>
   );
 }

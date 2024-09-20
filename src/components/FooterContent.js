@@ -3,7 +3,7 @@ import React from "react";
 const Section1 = () => {
   return (
     <div className="flex shrink-0 gap-20 py-40">
-      <h1 className="text-[5vw] leading-[0.8] mt-10">Call Us</h1>
+      <h1 className="text-[5vw] leading-[0.8] mt-10">Call Us.</h1>
     </div>
   );
 };
